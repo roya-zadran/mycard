@@ -13,73 +13,91 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.white,
-        appBar: AppBar(backgroundColor: Colors.lightBlueAccent),
         body: Column(
           children: [
             Container(
               color: Colors.lightBlueAccent,
               width: double.infinity,
-              height: 350,
-              child: Column(
-                children: [
-                  CircleAvatar(
-                    radius: 70,
-                    backgroundImage: NetworkImage(
-                      "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+              height: 450,
+              child: Padding(
+                padding: const EdgeInsets.only(top: 60),
+                child: Column(
+                  children: [
+                    CircleAvatar(
+                      radius: 65,
+                      backgroundImage: AssetImage("assets/images/bg.jpg"),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 15),
-                    child: Text(
+                    SizedBox(height: 10),
+                    Text(
                       "Megan Allison",
-                      style: TextStyle(fontSize: 20, color: Colors.white),
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      "Traveler, Dreamer, Photographer",
-                      style: TextStyle(fontSize: 15, color: Colors.white),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 2, 0, 50),
+                      child: Text(
+                        "Traveler,  Dreamer, & Photographer",
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
                     ),
-                  ),
-                  SizedBox(height: 20),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Text("Photos", style: TextStyle(color: Colors.indigo)),
-                      Text("Followers", style: TextStyle(color: Colors.indigo)),
-                      Text("Following", style: TextStyle(color: Colors.indigo)),
-                    ],
-                  ),
-                  Row( mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Text(
-                        "160",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 25),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Text("Photos", style: TextStyle(color: Colors.indigo)),
+                          Text(
+                            "Followers",
+                            style: TextStyle(color: Colors.indigo),
+                          ),
+                          Text(
+                            "Following",
+                            style: TextStyle(color: Colors.indigo),
+                          ),
+                        ],
                       ),
-                      Text(
-                        "1543",
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 5),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Text(
+                            "160",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          Text(
+                            "1543",
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          Text(
+                            "250",
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
                       ),
-                      Text(
-                        "250",
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ],
