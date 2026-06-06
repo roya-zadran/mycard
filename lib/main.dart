@@ -52,7 +52,10 @@ class MyApp extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Text("Photos", style: TextStyle(color: Colors.indigo)),
+                          Text(
+                            "Photos",
+                            style: TextStyle(color: Colors.indigo),
+                          ),
                           Text(
                             "Followers",
                             style: TextStyle(color: Colors.indigo),
@@ -96,9 +99,79 @@ class MyApp extends StatelessWidget {
                         ],
                       ),
                     ),
+                    SizedBox(height: 55),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Text(
+                          "ABOUT",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                        ),
+                        Text(
+                          "POSTS",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                    // add a divider!
                   ],
                 ),
               ),
+            ),
+            Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(12, 20, 12, 4),
+                  child: Card(
+                    color: Colors.white,
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            Icon(
+                              Icons.phone_android_rounded,
+                              color: Colors.blue,
+                            ),
+                         
+                            Column(
+                              children: [
+                                Text(
+                                  "Mobile",
+                                  style: TextStyle(color: Colors.blue),
+                                ),
+                                Text("+9462839238"),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Icon(Icons.phone, color: Colors.blue),
+                            Column(children: [
+                              Text("Work", style: TextStyle(color: Colors.blue),),
+                              Text("+68293824348"),
+                            ],),
+                          ],),
+                        Row(
+                          children: [
+                            Icon(Icons.email, color: Colors.blue),
+                            Column(children: [
+                              Text("Email", style: TextStyle(color: Colors.blue),),
+                              Text("meganallison@gamil.com"),
+                            ],),
+                          ],),
+                      ],
+                    ),
+                      
+                    ),
+                  ),
+              ],
             ),
           ],
         ),
