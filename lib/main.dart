@@ -52,49 +52,56 @@ class MyApp extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Text(
-                            "Photos",
-                            style: TextStyle(color: Colors.indigo),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(
+                                "Photos",
+                                style: TextStyle(color: Colors.indigo),
+                              ),
+                              Text(
+                                "160",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
                           ),
-                          Text(
-                            "Followers",
-                            style: TextStyle(color: Colors.indigo),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(
+                                "Followers",
+                                style: TextStyle(color: Colors.indigo),
+                              ),
+                              Text(
+                                "1543",
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
                           ),
-                          Text(
-                            "Following",
-                            style: TextStyle(color: Colors.indigo),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 5),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Text(
-                            "160",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          Text(
-                            "1543",
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          Text(
-                            "250",
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                            ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(
+                                "Following",
+                                style: TextStyle(color: Colors.indigo),
+                              ),
+                              Text(
+                                "250",
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
                           ),
                         ],
                       ),
@@ -124,54 +131,93 @@ class MyApp extends StatelessWidget {
                 ),
               ),
             ),
-            Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(12, 20, 12, 4),
-                  child: Card(
-                    color: Colors.white,
-                    child: Column(
+            Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(2),
+              ),
+              margin: EdgeInsets.fromLTRB(12, 20, 12, 4),
+              color: Colors.white,
+              child: Padding(
+                padding: const EdgeInsets.all(20),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 30),
+                      child: Row(
+                        children: [
+                          Icon(Icons.phone_android_rounded, color: Colors.blue),
+                          SizedBox(width: 30),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Mobile",
+                                style: TextStyle(color: Colors.blue),
+                              ),
+                              Text("+9462839238"),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 30),
+                      child: Row(
+                        children: [
+                          Icon(Icons.phone, color: Colors.blue),
+                          SizedBox(width: 30),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Work",
+                                style: TextStyle(color: Colors.blue),
+                              ),
+                              Text("+68293824348"),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    Row(
                       children: [
-                        Row(
+                        Icon(Icons.email, color: Colors.blue),
+                        SizedBox(width: 30),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Icon(
-                              Icons.phone_android_rounded,
-                              color: Colors.blue,
-                            ),
-                         
-                            Column(
-                              children: [
-                                Text(
-                                  "Mobile",
-                                  style: TextStyle(color: Colors.blue),
-                                ),
-                                Text("+9462839238"),
-                              ],
-                            ),
+                            Text("Email", style: TextStyle(color: Colors.blue)),
+                            Text("meganallison@gamil.com"),
                           ],
                         ),
-                        Row(
-                          children: [
-                            Icon(Icons.phone, color: Colors.blue),
-                            Column(children: [
-                              Text("Work", style: TextStyle(color: Colors.blue),),
-                              Text("+68293824348"),
-                            ],),
-                          ],),
-                        Row(
-                          children: [
-                            Icon(Icons.email, color: Colors.blue),
-                            Column(children: [
-                              Text("Email", style: TextStyle(color: Colors.blue),),
-                              Text("meganallison@gamil.com"),
-                            ],),
-                          ],),
                       ],
                     ),
-                      
-                    ),
+                  ],
+                ),
+              ),
+            ),
+            Card(
+              margin: EdgeInsets.symmetric(horizontal: 12),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(2),
+              ),
+
+              color: Colors.white,
+              child: Padding(
+                padding: const EdgeInsets.all(20),
+                child: SizedBox(
+                  width: double.infinity,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text("Status", style: TextStyle(color: Colors.blue)),
+                      Text("Available"),
+                    ],
                   ),
-              ],
+                ),
+              ),
             ),
           ],
         ),
