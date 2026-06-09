@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mycard/styles.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,7 +17,13 @@ class MyApp extends StatelessWidget {
         body: Column(
           children: [
             Container(
-              color: Colors.lightBlueAccent,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.bottomLeft,
+                  end:  Alignment.topLeft,
+                  colors: StudentCardPageStyles.FirstContainer,
+                )
+              ),
               width: double.infinity,
               height: 450,
               child: Padding(
@@ -135,24 +142,24 @@ class MyApp extends StatelessWidget {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(2),
               ),
-              margin: EdgeInsets.fromLTRB(12, 20, 12, 4),
+              margin: EdgeInsets.fromLTRB(12, 20, 12, 5),
               color: Colors.white,
               child: Padding(
                 padding: const EdgeInsets.all(20),
                 child: Column(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(bottom: 30),
+                      padding: const EdgeInsets.only(bottom: 40),
                       child: Row(
                         children: [
-                          Icon(Icons.phone_android_rounded, color: Colors.blue),
-                          SizedBox(width: 30),
+                          Icon(Icons.phone_android_rounded, color: StudentCardPageStyles.IconSColor),
+                          SizedBox(width: 35),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
                                 "Mobile",
-                                style: TextStyle(color: Colors.blue),
+                                style: TextStyle(color: StudentCardPageStyles.IconSColor),
                               ),
                               Text("+9462839238"),
                             ],
@@ -161,17 +168,17 @@ class MyApp extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(bottom: 30),
+                      padding: const EdgeInsets.only(bottom: 40),
                       child: Row(
                         children: [
-                          Icon(Icons.phone, color: Colors.blue),
-                          SizedBox(width: 30),
+                          Icon(Icons.phone, color: StudentCardPageStyles.IconSColor),
+                          SizedBox(width: 35),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
                                 "Work",
-                                style: TextStyle(color: Colors.blue),
+                                style: TextStyle(color: StudentCardPageStyles.IconSColor),
                               ),
                               Text("+68293824348"),
                             ],
@@ -181,12 +188,12 @@ class MyApp extends StatelessWidget {
                     ),
                     Row(
                       children: [
-                        Icon(Icons.email, color: Colors.blue),
-                        SizedBox(width: 30),
+                        Icon(Icons.email, color: StudentCardPageStyles.IconSColor),
+                        SizedBox(width: 35),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text("Email", style: TextStyle(color: Colors.blue)),
+                            Text("Email", style: TextStyle(color: StudentCardPageStyles.IconSColor),),
                             Text("meganallison@gamil.com"),
                           ],
                         ),
@@ -212,7 +219,7 @@ class MyApp extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("Status", style: TextStyle(color: Colors.blue)),
+                      Text("Status", style: TextStyle(color: StudentCardPageStyles.IconSColor)),
                       Text("Available"),
                     ],
                   ),
