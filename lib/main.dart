@@ -60,7 +60,6 @@ class MyApp extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Text(
                                 "Photos",
@@ -133,7 +132,20 @@ class MyApp extends StatelessWidget {
                         ),
                       ],
                     ),
-                    // add a divider!
+                   Row(children: [
+                     Container(
+                       alignment: Alignment.bottomLeft,
+                       height: 3,
+                       width: 200,
+                       color: Colors.black45,
+                     ),
+                     Container(
+                       alignment: Alignment.bottomLeft,
+                       height: 3,
+                       width: 200,
+                       color: Colors.red,
+                     ),
+                   ],),
                   ],
                 ),
               ),
