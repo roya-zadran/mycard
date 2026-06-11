@@ -12,234 +12,279 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor: Colors.white,
-        body: Column(
-          children: [
-            Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.bottomLeft,
-                  end:  Alignment.topLeft,
-                  colors: StudentCardPageStyles.FirstContainer,
-                )
-              ),
-              width: double.infinity,
-              height: 450,
-              child: Padding(
-                padding: const EdgeInsets.only(top: 60),
-                child: Column(
-                  children: [
-                    CircleAvatar(
-                      radius: 65,
-                      backgroundImage: AssetImage("assets/images/bg.jpg"),
-                    ),
-                    SizedBox(height: 10),
-                    Text(
-                      "Megan Allison",
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 2, 0, 50),
-                      child: Text(
-                        "Traveler,  Dreamer, & Photographer",
-                        style: TextStyle(
-                          fontSize: 15,
-                          color: Colors.white,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 25),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Column(
-                            children: [
-                              Text(
-                                "Photos",
-                                style: TextStyle(color: Colors.indigo),
-                              ),
-                              Text(
-                                "160",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ],
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Text(
-                                "Followers",
-                                style: TextStyle(color: Colors.indigo),
-                              ),
-                              Text(
-                                "1543",
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ],
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Text(
-                                "Following",
-                                style: TextStyle(color: Colors.indigo),
-                              ),
-                              Text(
-                                "250",
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(height: 55),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Text(
-                          "ABOUT",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
-                        ),
-                        Text(
-                          "POSTS",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ],
-                    ),
-                   Row(children: [
-                     Container(
-                       alignment: Alignment.bottomLeft,
-                       height: 3,
-                       width: 200,
-                       color: Colors.black45,
-                     ),
-                     Container(
-                       alignment: Alignment.bottomLeft,
-                       height: 3,
-                       width: 200,
-                       color: Colors.red,
-                     ),
-                   ],),
-                  ],
-                ),
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.teal,
+          brightness: Brightness.light,
+        ),
+      ),
+      home: HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Column(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.bottomLeft,
+                end: Alignment.topLeft,
+                colors: StudentCardPageStyles.FirstContainer,
               ),
             ),
-            Card(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(2),
-              ),
-              margin: EdgeInsets.fromLTRB(12, 20, 12, 5),
-              color: Colors.white,
-              child: Padding(
-                padding: const EdgeInsets.all(20),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 40),
-                      child: Row(
-                        children: [
-                          Icon(Icons.phone_android_rounded, color: StudentCardPageStyles.IconSColor),
-                          SizedBox(width: 35),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Mobile",
-                                style: TextStyle(color: StudentCardPageStyles.IconSColor),
-                              ),
-                              Text("+9462839238"),
-                            ],
-                          ),
-                        ],
+            width: double.infinity,
+            height: 436,
+            child: Padding(
+              padding: const EdgeInsets.only(top: 60),
+              child: Column(
+                children: [
+                  CircleAvatar(
+                    radius: 65,
+                    backgroundImage: AssetImage("assets/images/bg.jpg"),
+                  ),
+                  SizedBox(height: 10),
+                  Text(
+                    "Megan Allison",
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 2, 0, 50),
+                    child: Text(
+                      "Traveler,  Dreamer, & Photographer",
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 40),
-                      child: Row(
-                        children: [
-                          Icon(Icons.phone, color: StudentCardPageStyles.IconSColor),
-                          SizedBox(width: 35),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Work",
-                                style: TextStyle(color: StudentCardPageStyles.IconSColor),
-                              ),
-                              Text("+68293824348"),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                    Row(
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 25),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Icon(Icons.email, color: StudentCardPageStyles.IconSColor),
-                        SizedBox(width: 35),
                         Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text("Email", style: TextStyle(color: StudentCardPageStyles.IconSColor),),
-                            Text("meganallison@gamil.com"),
+                            Text(
+                              "Photos",
+                              style: TextStyle(color: Colors.indigo),
+                            ),
+                            Text(
+                              "160",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              "Followers",
+                              style: TextStyle(color: Colors.indigo),
+                            ),
+                            Text(
+                              "1543",
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              "Following",
+                              style: TextStyle(color: Colors.indigo),
+                            ),
+                            Text(
+                              "250",
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
                           ],
                         ),
                       ],
                     ),
+                  ),
+                  SizedBox(height: 55),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Text(
+                        "ABOUT",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                      Text(
+                        "POSTS",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      GestureDetector(
+                        onTap: (){},
+                        child: Container(
+                          alignment: Alignment.bottomLeft,
+                          height: 3,
+                          width: 200,
+                          color: Colors.black45,
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: (){
+                          print("Posts has been clicked!");
+                        },
+                        child: Container(
+                          alignment: Alignment.bottomLeft,
+                          height: 3,
+                          width: 200,
+                          color: Colors.teal,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(2),
+            ),
+            margin: EdgeInsets.fromLTRB(12, 20, 12, 5),
+            color: Colors.white,
+            child: Padding(
+              padding: const EdgeInsets.all(20),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 40),
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.phone_android_rounded,
+                          color: StudentCardPageStyles.IconSColor,
+                        ),
+                        SizedBox(width: 35),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Mobile",
+                              style: TextStyle(
+                                color: StudentCardPageStyles.IconSColor,
+                              ),
+                            ),
+                            Text("+9462839238"),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 40),
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.phone,
+                          color: StudentCardPageStyles.IconSColor,
+                        ),
+                        SizedBox(width: 35),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Work",
+                              style: TextStyle(
+                                color: StudentCardPageStyles.IconSColor,
+                              ),
+                            ),
+                            Text("+68293824348"),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.email,
+                        color: StudentCardPageStyles.IconSColor,
+                      ),
+                      SizedBox(width: 35),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Email",
+                            style: TextStyle(
+                              color: StudentCardPageStyles.IconSColor,
+                            ),
+                          ),
+                          Text("meganallison@gamil.com"),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Card(
+            margin: EdgeInsets.symmetric(horizontal: 12),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(2),
+            ),
+
+            color: Colors.white,
+            child: Padding(
+              padding: const EdgeInsets.all(20),
+              child: SizedBox(
+                width: double.infinity,
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Status",
+                      style: TextStyle(color: StudentCardPageStyles.IconSColor),
+                    ),
+                    Text("Available"),
                   ],
                 ),
               ),
             ),
-            Card(
-              margin: EdgeInsets.symmetric(horizontal: 12),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(2),
-              ),
-
-              color: Colors.white,
-              child: Padding(
-                padding: const EdgeInsets.all(20),
-                child: SizedBox(
-                  width: double.infinity,
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text("Status", style: TextStyle(color: StudentCardPageStyles.IconSColor)),
-                      Text("Available"),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
