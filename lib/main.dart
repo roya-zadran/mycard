@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mycard/DividerWidget.dart';
+import 'package:mycard/NavBarWidget.dart';
+import 'package:mycard/notififers.dart';
 import 'package:mycard/styles.dart';
 
 void main() {
@@ -14,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.teal,
+          seedColor: Colors.blue,
           brightness: Brightness.light,
         ),
       ),
@@ -23,12 +26,20 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
   @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+
+
+class _HomePageState extends State<HomePage> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: NavBarWidget(),
       body: Column(
         children: [
           Container(
@@ -40,7 +51,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
             width: double.infinity,
-            height: 436,
+            height: 420,
             child: Padding(
               padding: const EdgeInsets.only(top: 60),
               child: Column(
@@ -127,48 +138,47 @@ class HomePage extends StatelessWidget {
                       ],
                     ),
                   ),
-                  SizedBox(height: 55),
+                  SizedBox(height: 40),
+                  ValueListenableBuilder(valueListenable: SelectedTapNotifier, builder: (context, selectedTap, child) {
+                      return Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                selectedTap = 0;
+                              });
+                            },
+                            child: Text(
+                              "ABOUT",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                selectedTap = 1;
+                              });
+                            },
+                            child: Text(
+                              "POSTS",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ],
+                      );
+                  },),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Text(
-                        "ABOUT",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
-                      Text(
-                        "POSTS",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      GestureDetector(
-                        onTap: (){},
-                        child: Container(
-                          alignment: Alignment.bottomLeft,
-                          height: 3,
-                          width: 200,
-                          color: Colors.black45,
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: (){
-                          print("Posts has been clicked!");
-                        },
-                        child: Container(
-                          alignment: Alignment.bottomLeft,
-                          height: 3,
-                          width: 200,
-                          color: Colors.teal,
-                        ),
-                      ),
+                      // About == 0, Post == 1;
+                      MyDividerWidget(isSelected: 0),
+                      MyDividerWidget(isSelected: 1),
                     ],
                   ),
                 ],
@@ -179,14 +189,14 @@ class HomePage extends StatelessWidget {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(2),
             ),
-            margin: EdgeInsets.fromLTRB(12, 20, 12, 5),
+            margin: EdgeInsets.fromLTRB(12, 10, 12, 2),
             color: Colors.white,
             child: Padding(
               padding: const EdgeInsets.all(20),
               child: Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(bottom: 40),
+                    padding: const EdgeInsets.only(bottom: 30),
                     child: Row(
                       children: [
                         Icon(
@@ -266,7 +276,7 @@ class HomePage extends StatelessWidget {
 
             color: Colors.white,
             child: Padding(
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.all(15),
               child: SizedBox(
                 width: double.infinity,
                 child: Column(
@@ -289,3 +299,5 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+
+
