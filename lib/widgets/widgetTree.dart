@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mycard/NavBarWidget.dart';
-import 'package:mycard/homePage.dart';
+import 'package:mycard/widgets/NavBarWidget.dart';
+import 'package:mycard/pages/homePage.dart';
 import 'package:mycard/notififers.dart';
-import 'package:mycard/profilePage.dart';
+import 'package:mycard/pages/profilePage.dart';
 
 //HomePage = 0, ProfilePage = 1
 List<Widget> pages = [HomePage(), ProfilePage()];

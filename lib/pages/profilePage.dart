@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mycard/DividerWidget.dart';
+import 'package:mycard/widgets/DividerWidget.dart';
 import 'package:mycard/notififers.dart';
 import 'package:mycard/styles.dart';
 class ProfilePage extends StatefulWidget {
@@ -132,6 +132,9 @@ class _ProfilePageState extends State<ProfilePage> {
                       GestureDetector(
                         onTap: () {
                           setState(() {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) {
+
+                            },),);
                             SelectedTapNotifier.value = 1;
                           });
                         },

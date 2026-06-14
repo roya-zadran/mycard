@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mycard/NavBarWidget.dart';
+import 'package:mycard/widgets/NavBarWidget.dart';
 import 'package:mycard/notififers.dart';
-import 'package:mycard/profilePage.dart';
+import 'package:mycard/pages/profilePage.dart';
 
 
 class HomePage extends StatelessWidget {
@@ -14,3 +14,5 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+
+

@@ -5,12 +5,12 @@ class NavBarWidget extends StatefulWidget {
   const NavBarWidget({super.key});
 
   @override
-  State<NavBarWidget> createState() => _NavBarWigetState();
+  State<NavBarWidget> createState() => _NavBarWidgetState();
 }
 
 int selectedPage = 0;
 
-class _NavBarWigetState extends State<NavBarWidget> {
+class _NavBarWidgetState extends State<NavBarWidget> {
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder(

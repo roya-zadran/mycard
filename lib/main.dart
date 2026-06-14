@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mycard/homePage.dart';
-import 'package:mycard/widgetTree.dart';
+import 'package:mycard/pages/homePage.dart';
+import 'package:mycard/widgets/widgetTree.dart';
 
 void main() {
   runApp(MyApp());
