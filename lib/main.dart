@@ -146,7 +146,7 @@ class _HomePageState extends State<HomePage> {
                           GestureDetector(
                             onTap: () {
                               setState(() {
-                                selectedTap = 0;
+                                SelectedTapNotifier.value = 0;
                               });
                             },
                             child: Text(
@@ -160,7 +160,7 @@ class _HomePageState extends State<HomePage> {
                           GestureDetector(
                             onTap: () {
                               setState(() {
-                                selectedTap = 1;
+                                SelectedTapNotifier.value = 1;
                               });
                             },
                             child: Text(
