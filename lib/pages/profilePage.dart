@@ -132,9 +132,6 @@ class _ProfilePageState extends State<ProfilePage> {
                       GestureDetector(
                         onTap: () {
                           setState(() {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) {
-
-                            },),);
                             SelectedTapNotifier.value = 1;
                           });
                         },

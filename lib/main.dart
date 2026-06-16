@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mycard/pages/homePage.dart';
+import 'package:mycard/pages/welcomePage.dart';
 import 'package:mycard/widgets/widgetTree.dart';
 
 void main() {
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
           brightness: Brightness.light,
         ),
       ),
-      home: WidgetTree(),
+      home: WelcomePage(),
     );
   }
 }
