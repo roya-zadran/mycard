@@ -33,7 +33,7 @@ class _ProfilePageState extends State<ProfilePage> {
             child: Column(
               children: [
                 CircleAvatar(
-                  radius: size.width * 0.17,
+                  radius: size.width * 0.16,
                   backgroundImage: AssetImage("assets/images/bg.jpg"),
                 ),
                 SizedBox(height: size.height* 0.02),
@@ -245,7 +245,7 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
         ),
         Card(
-          margin: EdgeInsets.symmetric(horizontal: 14, vertical: 2),
+          margin: EdgeInsets.symmetric(horizontal: 14, vertical: size.height * 0.0002),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(3),
           ),
