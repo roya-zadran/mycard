@@ -13,12 +13,13 @@ int selectedPage = 0;
 class _NavBarWidgetState extends State<NavBarWidget> {
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return ValueListenableBuilder(
       valueListenable: SelectedPageNotifier,
       builder: (context, selectedPage, child) {
         return NavigationBar(
           indicatorColor: Colors.black12,
-          height: 65,
+          height: size.height *0.085,
           onDestinationSelected: (value) {
             setState(() {
               SelectedPageNotifier.value = value;

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mycard/widgets/DividerWidget.dart';
 import 'package:mycard/notififers.dart';
 import 'package:mycard/styles.dart';
+
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
 
@@ -10,8 +11,11 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+
   @override
   Widget build(BuildContext context) {
+    // MediaQuery.of(context).size makes the page layout scalable and flexible.
+    final size = MediaQuery.of(context).size;
     return Column(
       children: [
         Container(
@@ -23,16 +27,16 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
           ),
           width: double.infinity,
-          height: 420,
+          height: size.height * 0.50,
           child: Padding(
-            padding: const EdgeInsets.only(top: 60),
+            padding:  EdgeInsets.only(top: size.height * 0.07),
             child: Column(
               children: [
                 CircleAvatar(
-                  radius: 65,
+                  radius: size.width * 0.17,
                   backgroundImage: AssetImage("assets/images/bg.jpg"),
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: size.height* 0.02),
                 Text(
                   "Megan Allison",
                   style: TextStyle(
@@ -42,7 +46,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 2, 0, 50),
+                  padding: EdgeInsets.fromLTRB(0, 2, 0, size.height * 0.05),
                   child: Text(
                     "Traveler,  Dreamer, & Photographer",
                     style: TextStyle(
@@ -53,7 +57,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25),
+                  padding: EdgeInsets.symmetric( horizontal: size.width * 0.10 ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -110,7 +114,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     ],
                   ),
                 ),
-                SizedBox(height: 40),
+                SizedBox(height: size.height * 0.04),
                 ValueListenableBuilder(valueListenable: SelectedTapNotifier, builder: (context, selectedTap, child) {
                   return Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -159,9 +163,9 @@ class _ProfilePageState extends State<ProfilePage> {
         ),
         Card(
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(2),
+            borderRadius: BorderRadius.circular(3),
           ),
-          margin: EdgeInsets.fromLTRB(12, 10, 12, 2),
+          margin: EdgeInsets.symmetric(horizontal: 14, vertical: 3),
           color: Colors.white,
           child: Padding(
             padding: const EdgeInsets.all(20),
@@ -241,9 +245,9 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
         ),
         Card(
-          margin: EdgeInsets.symmetric(horizontal: 12),
+          margin: EdgeInsets.symmetric(horizontal: 14, vertical: 2),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(2),
+            borderRadius: BorderRadius.circular(3),
           ),
 
           color: Colors.white,
@@ -252,7 +256,6 @@ class _ProfilePageState extends State<ProfilePage> {
             child: SizedBox(
               width: double.infinity,
               child: Column(
-                mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -266,6 +269,7 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
           ),
         ),
+
       ],
     );
   }
