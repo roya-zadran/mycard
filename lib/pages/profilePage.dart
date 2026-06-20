@@ -114,7 +114,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     ],
                   ),
                 ),
-                SizedBox(height: size.height * 0.04),
+                SizedBox(height: size.height * 0.05),
                 ValueListenableBuilder(valueListenable: SelectedTapNotifier, builder: (context, selectedTap, child) {
                   return Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -165,7 +165,7 @@ class _ProfilePageState extends State<ProfilePage> {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(3),
           ),
-          margin: EdgeInsets.symmetric(horizontal: 14, vertical: 3),
+          margin: EdgeInsets.symmetric(horizontal: 14, vertical: 6),
           color: Colors.white,
           child: Padding(
             padding: const EdgeInsets.all(20),
