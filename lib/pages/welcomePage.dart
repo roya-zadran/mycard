@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:mycard/widgets/heroWidget.dart';
-import 'package:mycard/widgets/widgetTree.dart';
+import 'package:lottie/lottie.dart';
+import 'package:mycard/constants.dart';
+import 'package:mycard/pages/loginPage.dart';
+import 'package:mycard/pages/signupPage.dart';
+
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
@@ -13,15 +16,11 @@ class WelcomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Lottie.Asset("assets/lotties/welcomeLottie.json"),
+            Lottie.asset("assets/lotties/welcomeLottie.json",),
             FittedBox(
               child: Text(
                 "My Card App",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 3,
-                  wordSpacing: 2
-                ),
+                style: AppTitlestyle
               ),
             ),
             SizedBox(height: 20,),
@@ -31,7 +30,7 @@ class WelcomePage extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return WidgetTree();
+                      return SignupPage();
                     },
                   ),
                 );
@@ -49,7 +48,7 @@ class WelcomePage extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return WidgetTree();
+                      return LoginPage();
                     },
                   ),
                 );
