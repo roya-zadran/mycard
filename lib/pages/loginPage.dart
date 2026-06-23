@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mycard/pages/homePage.dart';
 import 'package:mycard/widgets/heroWidget.dart';
+import 'package:mycard/widgets/widgetTree.dart';
 
 class LoginPage extends StatefulWidget {
   final String pageTitle;
@@ -81,7 +82,7 @@ class _LoginPageState extends State<LoginPage> {
         context,
         MaterialPageRoute(
           builder: (context) {
-            return HomePage();
+            return WidgetTree();
           },
         ),
         (route) => false,
