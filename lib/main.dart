@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mycard/pages/homePage.dart';
 import 'package:mycard/pages/welcomePage.dart';
-import 'package:mycard/widgets/widgetTree.dart';
+
 
 void main() {
   runApp(MyApp());
@@ -17,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.teal,
-          brightness: Brightness.light,
+          brightness: Brightness.dark,
         ),
       ),
       home: WelcomePage(),

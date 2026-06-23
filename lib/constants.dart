@@ -8,5 +8,5 @@ class StudentCardPageStyles {
 final AppTitlestyle =  TextStyle(
     fontWeight: FontWeight.bold,
     letterSpacing: 3,
-    wordSpacing: 2
+  fontSize: 20,
 );
