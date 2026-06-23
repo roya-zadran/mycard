@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mycard/pages/homePage.dart';
 import 'package:mycard/widgets/heroWidget.dart';
-import 'package:mycard/widgets/widgetTree.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -11,6 +11,8 @@ class LoginPage extends StatefulWidget {
 
 TextEditingController emailController = TextEditingController();
 TextEditingController passwordController = TextEditingController();
+String confirmedEmail = "123";
+String confirmedPassword = "123";
 
 class _LoginPageState extends State<LoginPage> {
   @override
@@ -52,15 +54,7 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(height: 10),
               FilledButton(
                 onPressed: () {
-                  Navigator.pushAndRemoveUntil(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return WidgetTree();
-                      },
-                    ),
-                    (route) => false,
-                  );
+                  Login();
                 },
                 child: Text("Login"),
                 style: FilledButton.styleFrom(
@@ -76,5 +70,20 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
+  }
+
+  void Login() {
+    if (confirmedPassword == passwordController.text &&
+        confirmedEmail == emailController.text) {
+      Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(
+          builder: (context) {
+            return HomePage();
+          },
+        ),
+        (route) => false,
+      );
+    }
   }
 }
