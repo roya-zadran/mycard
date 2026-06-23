@@ -3,7 +3,9 @@ import 'package:mycard/pages/homePage.dart';
 import 'package:mycard/widgets/heroWidget.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+  final String pageTitle;
+  final String buttonText;
+ LoginPage({super.key, required this.pageTitle, required this.buttonText});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -24,7 +26,7 @@ class _LoginPageState extends State<LoginPage> {
           padding: const EdgeInsets.all(25),
           child: Column(
             children: [
-              HeroWidget(PageTilte: "Login"),
+              HeroWidget(PageTilte: widget.pageTitle),
               SizedBox(height: 15),
               TextField(
                 controller: emailController,
@@ -56,7 +58,7 @@ class _LoginPageState extends State<LoginPage> {
                 onPressed: () {
                   Login();
                 },
-                child: Text("Login"),
+                child: Text(widget.buttonText),
                 style: FilledButton.styleFrom(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(25),

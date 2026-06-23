@@ -30,13 +30,15 @@ class _HeroWidgetState extends State<HeroWidget> {
           ),
         ),
         FittedBox(
-          child: Text(
-            widget.PageTilte,
-            style: TextStyle(
-              color: Colors.tealAccent,
-              fontSize: 20,
-              letterSpacing: 50,
-              fontWeight: FontWeight.w300,
+          child: Padding(
+            padding: const EdgeInsets.all(40),
+            child: Text(
+              widget.PageTilte,
+              style: TextStyle(
+                color: Colors.tealAccent,
+                fontSize: 60,
+                letterSpacing: 60,
+              ),
             ),
           ),
         ),
