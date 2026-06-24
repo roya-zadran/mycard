@@ -35,7 +35,11 @@ class _NavBarWidgetState extends State<NavBarWidget> {
               icon: Icon(Icons.person, color: Colors.teal, size: 25),
               label: "Profile",
             ),
-          ],
+            NavigationDestination(
+              icon: Icon(Icons.settings, color: Colors.teal, size: 25),
+              label: "Settings",
+            )
+           ]
         );
       },
     );

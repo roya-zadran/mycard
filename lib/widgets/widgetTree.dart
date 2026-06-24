@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:mycard/pages/settings.dart';
 import 'package:mycard/widgets/NavBarWidget.dart';
 import 'package:mycard/pages/homePage.dart';
 import 'package:mycard/notififers.dart';
 import 'package:mycard/pages/profilePage.dart';
 
 //HomePage = 0, ProfilePage = 1
-List<Widget> pages = [HomePage(), ProfilePage()];
+List<Widget> pages = [HomePage(), ProfilePage(), SettingsPage()];
+
 class WidgetTree extends StatefulWidget {
   const WidgetTree({super.key});
 
@@ -17,13 +19,23 @@ class _WidgetTreeState extends State<WidgetTree> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(actions: [ ValueListenableBuilder(valueListenable: ThemeNotifier, builder: (context, IsDarkMode, child) {
-        return
-          IconButton(onPressed: () {
-            ThemeNotifier.value =!ThemeNotifier.value;
-          }, icon: IsDarkMode == true ? Icon(Icons.light_mode_outlined) : Icon(Icons.dark_mode) );
-      },)
-      ],),
+      appBar: AppBar(
+        actions: [
+          ValueListenableBuilder(
+            valueListenable: ThemeNotifier,
+            builder: (context, IsDarkMode, child) {
+              return IconButton(
+                onPressed: () {
+                  ThemeNotifier.value = !ThemeNotifier.value;
+                },
+                icon: IsDarkMode == true
+                    ? Icon(Icons.light_mode_outlined)
+                    : Icon(Icons.dark_mode),
+              );
+            },
+          ),
+        ],
+      ),
       bottomNavigationBar: NavBarWidget(),
       body: ValueListenableBuilder(
         valueListenable: SelectedPageNotifier,
